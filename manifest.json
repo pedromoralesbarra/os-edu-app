@@ -1,0 +1,16 @@
+{
+  "name": "OS & Computer Explorer",
+  "short_name": "OS Explorer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#071020",
+  "theme_color": "#0f1720",
+  "description": "Aplicación educativa para aprender sobre hardware, software y sistemas operativos.",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
