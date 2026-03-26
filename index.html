@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OS & Computer Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f1720">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <h1>OS & Computer Explorer</h1>
+    <p>Aprende sobre el sistema operativo, el kernel, hardware y software de una computadora.</p>
+    <nav id="main-nav">
+      <a href="#intro">Introducción</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#software">Software & OS</a>
+      <a href="#kernel">El Kernel</a>
+      <a href="#processes">Procesos</a>
+      <a href="#memory">Memoria</a>
+      <a href="#drivers">Drivers</a>
+      <a href="#boot">Arranque</a>
+      <a href="#filesystems">Sistemas de archivos</a>
+      <a href="#network">Redes & Seguridad</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#profile">Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Introducción</h2>
+      <p>Esta aplicación te guía paso a paso para entender cómo funciona una computadora y su sistema operativo. Cada sección explica componentes, su función y relaciones entre ellos.</p>
+    </section>
+
+    <section id="hardware">
+      <h2>Hardware de la computadora</h2>
+      <h3>1. Componentes principales</h3>
+      <ul>
+        <li><strong>CPU:</strong> Unidad central de procesamiento; ejecuta instrucciones y controla otros componentes.</li>
+        <li><strong>RAM:</strong> Memoria volátil usada por procesos en ejecución.</li>
+        <li><strong>Almacenamiento:</strong> HDD, SSD, NVMe; retienen datos permanentemente.</li>
+        <li><strong>Placa base (motherboard):</strong> Conecta componentes y ofrece buses de datos.</li>
+        <li><strong>GPU:</strong> Procesamiento gráfico / aceleración (también usado para cómputo paralelo).</li>
+        <li><strong>Periféricos:</strong> Teclado, ratón, cámaras, impresoras, etc.</li>
+      </ul>
+      <h3>2. Buses y comunicaciones</h3>
+      <p>Los buses (PCIe, SATA, USB) conectan dispositivos y permiten transferencia de datos. El chipset y el controlador de memoria gestionan acceso y arbitraje.</p>
+    </section>
+
+    <section id="software">
+      <h2>Software y Sistema Operativo</h2>
+      <p>El software se divide en <em>aplicaciones</em> (userland) y <em>sistema</em> (OS). El sistema operativo medía entre hardware y aplicaciones: gestiona procesos, memoria, I/O, seguridad y sistema de archivos.</p>
+      <h3>Capas típicas</h3>
+      <ol>
+        <li>Firmware (BIOS/UEFI)</li>
+        <li>Bootloader</li>
+        <li>Kernel</li>
+        <li>Drivers</li>
+        <li>Servicios del sistema</li>
+        <li>Aplicaciones de usuario</li>
+      </ol>
+    </section>
+
+    <section id="kernel">
+      <h2>El Kernel</h2>
+      <p>El kernel es el núcleo del sistema operativo. Controla recursos, gestiona procesos, memoria, dispositivos y proporciona abstracciones (p. ej. archivos, sockets).</p>
+      <h3>Tipos de kernel</h3>
+      <ul>
+        <li><strong>Monolítico:</strong> Todo el núcleo (scheduler, filesystem, drivers) en una única imagen (ej. Linux tradicional).</li>
+        <li><strong>Microkernel:</strong> Núcleo minimalista; servicios (drivers, filesystems) corren en espacio de usuario (ej. MINIX, QNX).</li>
+        <li><strong>Híbrido:</strong> Compromiso entre ambos (ej. algunos diseños de Windows).</li>
+      </ul>
+      <h3>Servicios clave del kernel</h3>
+      <p>Scheduler (planificación), gestión de memoria (virtual memory), manejo de interrupciones, llamadas al sistema (syscalls), comunicación entre procesos (IPC).</p>
+    </section>
+
+    <section id="processes">
+      <h2>Procesos y concurrencia</h2>
+      <p>Un proceso es una instancia de un programa en ejecución. Contiene su espacio de direcciones, hilos (threads), descriptores de archivos y estado.</p>
+      <h3>Hilos</h3>
+      <p>Los hilos permiten concurrencia dentro de un proceso. Pueden ser gestionados por el kernel (kernel threads) o por librerías (user threads).</p>
+      <h3>Context switching</h3>
+      <p>El scheduler cambia el contexto entre procesos/hilos guardando registros CPU y estado para reanudar luego.</p>
+    </section>
+
+    <section id="memory">
+      <h2>Memoria y almacenamiento</h2>
+      <h3>Memoria virtual</h3>
+      <p>El kernel presenta memoria virtual a procesos, trabajando con tablas de páginas y la MMU. Esto permite aislamiento y uso de más memoria que la física mediante swapping.</p>
+      <h3>Gestión de memoria</h3>
+      <p>Asignación de páginas, cachés, TLB, swapping/paging y protección de memoria son responsabilidades críticas.</p>
+    </section>
+
+    <section id="drivers">
+      <h2>Dispositivos y controladores (drivers)</h2>
+      <p>Los drivers permiten al kernel comunicarse con hardware. Se encargan de inicializar dispositivos, manejar interrupciones y exponer interfaces a capas superiores.</p>
+      <p>Ejemplos: drivers de red, almacenamiento, gráficos y USB.</p>
+    </section>
+
+    <section id="boot">
+      <h2>Proceso de arranque (Boot)</h2>
+      <p>Secuencia típica: BIOS/UEFI → Bootloader (GRUB) → Kernel → Init/Systemd → Servicios y login.</p>
+      <p>El firmware inicializa hardware mínimo y transfiere control al bootloader que carga el kernel en memoria.</p>
+    </section>
+
+    <section id="filesystems">
+      <h2>Sistemas de archivos</h2>
+      <p>Los sistemas de archivos organizan datos en almacenamiento persistente. Ejemplos: FAT, NTFS, ext4, Btrfs. Proporcionan metadatos, journaling y permisos.</p>
+    </section>
+
+    <section id="network">
+      <h2>Redes y seguridad</h2>
+      <p>El kernel incluye pila de red (TCP/IP) y mecanismos de seguridad: permisos, ACLs, SELinux/AppArmor, firewalls y cifrado.</p>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz interactivo</h2>
+      <div id="quiz-container">
+        <p id="quiz-question">¿Qué componente traduce direcciones virtuales a físicas?</p>
+        <div class="choices">
+          <button data-choice="A">MMU</button>
+          <button data-choice="B">CPU</button>
+          <button data-choice="C">Scheduler</button>
+          <button data-choice="D">Bootloader</button>
+        </div>
+        <p id="quiz-feedback"></p>
+      </div>
+    </section>
+
+    <section id="glossary">
+      <h2>Glosario</h2>
+      <dl>
+        <dt>Kernel</dt><dd>Núcleo del sistema operativo que gestiona recursos.</dd>
+        <dt>MMU</dt><dd>Unidad de gestión de memoria, traduce direcciones virtuales a físicas.</dd>
+        <dt>Syscall</dt><dd>Llamada al sistema; interfaz entre aplicaciones y kernel.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <section id="profile" style="padding:16px;max-width:1000px;margin:16px auto;background:rgba(255,255,255,0.02);border-radius:8px;">
+    <h2>Perfil y progreso</h2>
+    <p>Resumen de progreso y opciones de exportar/importar o reiniciar progreso.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="export-progress">Exportar progreso</button>
+      <button id="import-progress">Importar progreso</button>
+      <button id="reset-progress">Reiniciar progreso</button>
+      <button id="view-progress">Ver resumen</button>
+    </div>
+    <input id="import-file" type="file" accept="application/json" style="display:none;margin-top:8px" />
+  </section>
+
+  <footer>
+    <p>Proyecto educativo — abre <em>index.html</em> en tu navegador.</p>
+  </footer>
+  <script src="data/lessons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

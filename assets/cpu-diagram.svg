@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360">
+  <style>
+    .box{fill:#0b1220;stroke:#38bdf8;stroke-width:1.5;rx:8}
+    .label{fill:#e6eef8;font-family:Segoe UI,Arial,sans-serif;font-size:12px}
+    .part:hover{stroke:#fff;stroke-width:2}
+  </style>
+
+  <rect x="10" y="10" width="880" height="340" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)"/>
+
+  <!-- CPU core block -->
+  <g id="core" class="part">
+    <rect x="40" y="40" width="360" height="200" class="box"/>
+    <text x="60" y="62" class="label">CPU Core (núcleo)</text>
+
+    <rect id="alu" x="60" y="80" width="120" height="60" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="70" y="110" class="label">ALU</text>
+
+    <rect id="fpu" x="200" y="80" width="120" height="60" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="210" y="110" class="label">FPU</text>
+
+    <rect id="registers" x="340" y="80" width="50" height="60" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="345" y="110" class="label">Registros</text>
+
+    <rect id="pipeline" x="60" y="160" width="330" height="60" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="70" y="190" class="label">Pipeline (fetch → decode → execute → mem → writeback)</text>
+  </g>
+
+  <!-- Cache blocks -->
+  <g id="cache" class="part">
+    <rect x="430" y="40" width="200" height="100" class="box"/>
+    <text x="440" y="62" class="label">Cachés</text>
+    <rect id="l1" x="450" y="80" width="60" height="40" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="455" y="105" class="label">L1</text>
+    <rect id="l2" x="520" y="80" width="60" height="40" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="525" y="105" class="label">L2</text>
+    <rect id="l3" x="590" y="80" width="60" height="40" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="595" y="105" class="label">L3</text>
+  </g>
+
+  <!-- MMU and TLB -->
+  <g id="mmu_group" class="part">
+    <rect x="430" y="160" width="220" height="80" class="box"/>
+    <text x="440" y="182" class="label">MMU / TLB</text>
+    <rect id="tlb" x="450" y="200" width="80" height="40" fill="#071126" stroke="#38bdf8" rx="6"/>
+    <text x="455" y="225" class="label">TLB</text>
+  </g>
+
+  <!-- Memory and buses -->
+  <g id="memory_group">
+    <rect x="40" y="260" width="280" height="80" class="box"/>
+    <text x="60" y="282" class="label">Memoria (RAM)</text>
+
+    <rect x="340" y="260" width="200" height="80" class="box"/>
+    <text x="360" y="282" class="label">Controlador de memoria / Bus</text>
+  </g>
+
+  <!-- Connections (visual) -->
+  <line x1="240" y1="140" x2="450" y2="140" stroke="rgba(56,189,248,0.5)" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="200" y1="220" x2="200" y2="260" stroke="rgba(56,189,248,0.5)" stroke-width="2" stroke-dasharray="4 4"/>
+
+</svg>
