@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const jobBtn = document.getElementById('search-jobs-btn');
   if(jobBtn){
     jobBtn.addEventListener('click', ()=>{
-      window.open('https://www.linkedin.com/jobs/search/?keywords=t%C3%A9cnico+en+inform%C3%A1tica&location=Santiago%2C+Chile&f_TPR=r604800', '_blank', 'noopener,noreferrer');
+      window.open('https://www.linkedin.com/jobs/search/?keywords=t%C3%A9cnico+en+inform%C3%A1tica&location=Santiago%2C+Chile', '_blank', 'noopener,noreferrer');
     });
   }
 });
